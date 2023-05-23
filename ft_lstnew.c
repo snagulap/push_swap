@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:09:26 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/22 16:07:54 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/05/23 13:48:31 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_list	*ft_lstnew(t_list *list_a, int data)
 		return (0);
 	new->data = data;
 	new->next = list_a;
-	// list_a = new;
-	return (new);
+	list_a = new;
+	return (list_a);
 }
 
 t_list	*creating_llist(t_list *list_, char **argv)

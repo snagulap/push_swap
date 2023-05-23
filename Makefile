@@ -5,7 +5,9 @@ SRCS = push_swap.c\
 		ft_lstnew.c\
 		check.c\
 		sorting.c\
-		sa_sb_ss.c
+		sa_sb_ss.c\
+		pa_pb.c\
+		ra_rb_rr.c\
 
 
 RM = rm -f
@@ -34,6 +36,7 @@ clean:
 fclean:
 	make fclean -C libft
 	# make fclean -C $(NAME)
+	-@$(RM) $(OBJ)
 	-@$(RM) $(NAME)
 
 re: fclean all

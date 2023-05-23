@@ -27,7 +27,7 @@ void	print_list(t_list *head)
 	}
 }
 
-void ft_free(t_list *list_)
+void	ft_free(t_list *list_)
 {
 	t_list	*current;
 	t_list	*temp;
@@ -43,13 +43,13 @@ void ft_free(t_list *list_)
 
 int	main(int argc, char **argv)
 {
-	t_stacks	stack;
-
 	t_list	*list_a;
+	t_list	*list_b;
 	int		i;
 
 	i = 1;
 	list_a = NULL;
+	list_b = NULL;
 	if (argc == 2)
 	{
 		write(1, "Error\n", 6);
@@ -58,11 +58,9 @@ int	main(int argc, char **argv)
 	list_a = creating_llist(list_a, argv);
 	if (check_duplicate(list_a))
 		return (0);
-	// list_a = sorting_list(list_a);
-	print_list(list_a);
-	swap_a(list_a);
-	print_list(list_a);
+	rotate_a(&list_a);
+	// print_list(list_a);
 	ft_free(list_a);
-	// system("leaks push_swap");
+	system("leaks push_swap");
 	return (0);
 }
