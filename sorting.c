@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 20:24:48 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/21 21:20:01 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:28:51 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ t_list	*sorting_list(t_list *list_)
 	}
 	return (dummy);
 }
-

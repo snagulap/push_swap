@@ -59,7 +59,6 @@ int	main(int argc, char **argv)
 	if (check_duplicate(list_a))
 		return (0);
 	rotate_a(&list_a);
-	// print_list(list_a);
 	ft_free(list_a);
 	system("leaks push_swap");
 	return (0);

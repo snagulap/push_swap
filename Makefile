@@ -8,6 +8,7 @@ SRCS = push_swap.c\
 		sa_sb_ss.c\
 		pa_pb.c\
 		ra_rb_rr.c\
+		rr_a_b_rr.c\
 
 
 RM = rm -f
@@ -30,12 +31,10 @@ $(NAME): $(OBJ)
 
 clean:
 	make clean -C libft
-	# make clean -C $(NAME)
 	-@$(RM) $(OBJ)
 
 fclean:
 	make fclean -C libft
-	# make fclean -C $(NAME)
 	-@$(RM) $(OBJ)
 	-@$(RM) $(NAME)
 

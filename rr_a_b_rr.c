@@ -6,7 +6,15 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 18:45:54 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/23 16:11:47 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:30:28 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	reverse_ra(t_list **list_a)
+{
+	t_list	*reverse;
+	
+	reverse = (*list_a);
+}

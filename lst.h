@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:21:33 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/23 16:10:08 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:27:38 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ void	push_b(t_list **list_a, t_list **list_b);
 void	rotate_a(t_list **list_a);
 void	rotate_b(t_list **list_b);
 void	rotate_a_b(t_list **list_a, t_list **list_b);
+void	reverse_ra(t_list **list_a);
 #endif
