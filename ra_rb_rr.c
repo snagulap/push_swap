@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:59:44 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/23 16:09:55 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:52:03 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rotate_a(t_list **list_a)
 		while (tmp->next)
 			tmp = tmp->next;
 		tmp->next = rotate;
-		printf("ra\n");
+		ft_printf("ra\n");
 	}
 }
 
@@ -44,7 +44,7 @@ void	rotate_b(t_list **list_b)
 		while (tmp->next)
 			tmp = tmp->next;
 		tmp->next = rotate;
-		printf("rb\n");
+		ft_printf("rb\n");
 	}
 }
 

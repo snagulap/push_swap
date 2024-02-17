@@ -6,13 +6,13 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 18:45:33 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/23 14:43:06 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/06/08 13:30:04 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_b(t_list **list_a, t_list **list_b)
+void	push_a(t_list **list_a, t_list **list_b)
 {
 	t_list	*top;
 
@@ -25,10 +25,10 @@ void	push_b(t_list **list_a, t_list **list_b)
 		top->next = (*list_a);
 		(*list_a) = top;
 	}
-	printf("pb\n");
+	ft_printf("pa\n");
 }
 
-void	push_a(t_list **list_a, t_list **list_b)
+void	push_b(t_list **list_a, t_list **list_b)
 {
 	t_list	*top;
 
@@ -41,5 +41,18 @@ void	push_a(t_list **list_a, t_list **list_b)
 		top->next = (*list_b);
 		(*list_b) = top;
 	}
-	printf("pa\n");
+	ft_printf("pb\n");
+}
+
+int	rotate__(t_list *list_b, int max)
+{
+	int	i;
+
+	i = 0;
+	while (list_b && list_b->index != max)
+	{
+		list_b = list_b->next;
+		i++;
+	}
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 18:46:03 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/23 13:51:15 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:51:39 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ void	sa(t_list **current)
 		index->next = (*current);
 		(*current) = index;
 	}
-	printf("sa\n");
 }
 
 void	swap_a(t_list	**list_)
 {
 	sa(&(*list_));
-	printf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	sb(t_list **current)
@@ -48,12 +47,12 @@ void	sb(t_list **current)
 void	swap_b(t_list	**list_)
 {
 	sb(&(*list_));
-	printf("sb\n");
+	ft_printf("sb\n");
 }
 
-void	swap_ss(t_list	**list_)
+void	swap_ss(t_list	**list_a, t_list **list_b)
 {
-	sa(&(*list_));
-	sb(&(*list_));
-	printf("ss\n");
+	sa(&(*list_a));
+	sb(&(*list_b));
+	ft_printf("ss\n");
 }

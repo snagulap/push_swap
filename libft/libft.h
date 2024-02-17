@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: snagulap <snagulap@student.42.fr>          +#+  +:+       +#+        */
+/*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 18:20:17 by snagulap          #+#    #+#             */
-/*   Updated: 2022/12/29 20:34:03 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/05/27 11:00:53 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -50,5 +52,17 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+int		ft_printf(const char *format, ...);
+int		ft_print(va_list args, char format);
+int		ft_printnumlen(unsigned int num);
+char	*ft_uitoa(unsigned int num);
+int		ft_print_uns(unsigned int num);
+int		ft_printchar(char c);
+int		ft_printstr(char *s);
+int		count_hex_num(size_t num);
+char	*hex_str(unsigned long num, char base);
+int		ft_printhex(unsigned int num, char base);
+int		ft_print_pointer(void *p);
+int		ft_print_num(int num);
 
 #endif

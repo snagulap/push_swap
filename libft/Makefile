@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: snagulap <snagulap@student.42.fr>          +#+  +:+       +#+         #
+#    By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 18:20:21 by snagulap          #+#    #+#              #
-#    Updated: 2022/12/29 20:34:53 by snagulap         ###   ########.fr        #
+#    Updated: 2023/05/27 11:01:37 by snagulap         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,11 @@ SRCS			=	ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_isascii.c\
 					ft_calloc.c ft_memset.c ft_strdup.c ft_substr.c\
 					ft_strjoin.c ft_atoi.c ft_itoa.c ft_putchar_fd.c\
 					ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-					ft_strtrim.c ft_strmapi.c ft_split.c ft_striteri.c
+					ft_strtrim.c ft_strmapi.c ft_split.c ft_striteri.c\
+					ft_printf.c\
+					ft_printdec.c\
+					ft_printstr.c\
+					ft_printhex.c
 OBJS=$(SRCS:.c=.o)
 
 CC=gcc

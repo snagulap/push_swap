@@ -11,20 +11,12 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include<stdio.h>
 
-void	ft_error(void)
+int	ft_error(void)
 {
-	printf("Error\n");
-	return ;
-}
-
-void	print_list(t_list *head)
-{
-	while (head != NULL)
-	{
-		printf("%d -> ", head->data);
-		head = head->next;
-	}
+	ft_printf("Error\n");
+	exit(1);
 }
 
 void	ft_free(t_list *list_)
@@ -41,25 +33,37 @@ void	ft_free(t_list *list_)
 	}
 }
 
+int	error__(void)
+{
+	write(1, "Error\n", 6);
+	exit(1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*list_a;
 	t_list	*list_b;
-	int		i;
+	int		value;
 
-	i = 1;
 	list_a = NULL;
 	list_b = NULL;
-	if (argc == 2)
+	if (argc < 2)
+		error__();
+	list_a = list_create(argv);
+	value = count_list(list_a);
+	if (value == 2)
+		return (0);
+	else if (value == 3)
+		sorting_3el(&list_a);
+	else if (value == 4)
+		sorting_4el(&list_a, &list_b);
+	else if (value == 5)
+		sorting_5el(&list_a, &list_b);
+	else
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		sort_b(&list_a, &list_b, value);
+		sort_a(&list_a, &list_b, value);
 	}
-	list_a = creating_llist(list_a, argv);
-	if (check_duplicate(list_a))
-		return (0);
-	rotate_a(&list_a);
 	ft_free(list_a);
-	system("leaks push_swap");
 	return (0);
 }

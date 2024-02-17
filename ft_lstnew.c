@@ -6,7 +6,7 @@
 /*   By: snagulap <snagulap@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:09:26 by snagulap          #+#    #+#             */
-/*   Updated: 2023/05/23 13:48:31 by snagulap         ###   ########.fr       */
+/*   Updated: 2023/06/09 16:09:12 by snagulap         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,46 @@ t_list	*ft_lstnew(t_list *list_a, int data)
 	return (list_a);
 }
 
+long int	ft_atoi_check(char *str)
+{
+	int			i;
+	int			j;
+	long int	a_i;
+
+	i = 0;
+	j = 1;
+	a_i = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || \
+	str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-')
+		j = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			ft_error();
+		a_i = (a_i * 10) + (str[i++] - '0');
+	}
+	a_i = a_i * j;
+	if (a_i > INT_MAX || a_i < INT_MIN)
+		ft_error();
+	return (a_i);
+}
+
 t_list	*creating_llist(t_list *list_, char **argv)
 {
-	int	i;
-	int	num;
+	int			i;
+	long int	num;
 
-	i = 1;
-	num = ft_atoi(argv[i]);
+	i = 0;
+	num = ft_atoi_check(argv[i]);
 	i++;
 	list_ = ft_lstnew(list_, num);
 	while (argv[i])
 	{
-		num = ft_atoi(argv[i]);
+		num = ft_atoi_check(argv[i]);
 		list_ = ft_addlast(list_, num);
 		i++;
 	}
@@ -44,9 +72,6 @@ t_list	*creating_llist(t_list *list_, char **argv)
 		ft_error();
 	return (list_);
 }
-/** adding an item to the end of the list
- * @
- * **/
 
 t_list	*ft_addlast(t_list *new, int i)
 {
@@ -61,17 +86,19 @@ t_list	*ft_addlast(t_list *new, int i)
 	return (new);
 }
 
-int	ft_poplst(t_list **node)
+int	get_index(t_list *list, int target)
 {
-	int		ret;
-	t_list	*list_b;
+	int	index;
 
-	list_b = NULL;
-	if (list_b != NULL)
-		return (0);
-	list_b = (*node)->next;
-	ret = (*node)->data;
-	free(list_b);
-	*node = list_b;
-	return (ret);
+	index = 0;
+	while (list != NULL)
+	{
+		if (list->data == target)
+		{
+			return (index);
+		}
+		list = list->next;
+		index++;
+	}
+	return (-1);
 }
